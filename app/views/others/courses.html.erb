@@ -1,0 +1,29 @@
+<h1>Courses</h1>
+<p>
+<div class="table-responsive">
+  <table class="table table-striped">
+                 <thead>
+                   <tr>
+                  <th>#</th>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Id</th>
+                  <th>Credits</th>
+                  <th>Code</th>
+                 </tr>
+                 </thead>
+              <tbody>
+                <% @courses.each do |course| %>
+                <tr>
+                  <td><%= course['id']%> </td>
+                  <td><%= course['name']%></td>
+                  <td><%= course['description']%></td>
+                  <td><%= course['unique_id']%></td>
+                  <td><%= course['credits']%></td>
+                  <td><%= course['code']%></td>
+                </tr>
+                  <% end %>
+              </tbody>
+            </table>
+          </div>
+</p>

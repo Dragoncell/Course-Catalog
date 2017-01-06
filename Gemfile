@@ -12,6 +12,9 @@ gem 'pg', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
 # Use Puma as the app server
+gem 'bootstrap-sass', '3.3.6'
+gem 'bcrypt',         '3.1.11'
+gem 'json'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

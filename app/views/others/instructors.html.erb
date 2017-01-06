@@ -1,0 +1,29 @@
+<h1>Instructors</h1>
+<p>
+<div class="table-responsive">
+  <table class="table table-striped">
+                 <thead>
+                   <tr>
+                  <th>#</th>
+                  <th>Last</th>
+                  <th>Middle</th>
+                  <th>First</th>
+                  <th>id</th>
+                  <th>email</th>
+                 </tr>
+                 </thead>
+              <tbody>
+                <% @instructors.each do |instructor| %>
+                <tr>
+                  <td><%= instructor['id']%> </td>
+                  <td><%= instructor['last']%></td>
+                  <td><%= instructor['middle']%></td>
+                  <td><%= instructor['first']%></td>
+                  <td><%= instructor['unique_id']%></td>
+                  <td><%= instructor['email']%></td>
+                </tr>
+                  <% end %>
+              </tbody>
+            </table>
+          </div>
+</p>
