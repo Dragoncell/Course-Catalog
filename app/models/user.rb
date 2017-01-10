@@ -14,4 +14,21 @@ class User < ApplicationRecord
                                                       BCrypt::Engine.cost
         BCrypt::Password.create(string, cost: cost)
     end
+
+    has_many :active_enrollments, class_name: 'Enrollment',
+                                  foreign_key: 'user_id',
+                                  dependent:   :destroy
+    has_many :takingcourses, through: :active_enrollments, source: :course
+
+    def enroll(course)
+        takingcourses << course
+    end
+
+    def unenroll(course)
+        takingcourses.delete(course)
+    end
+
+    def enroll?(course)
+        takingcourses.include?(course)
+    end
 end

@@ -15,8 +15,11 @@ Rails.application.routes.draw do
     get '/courses', to: 'others#courses'
     get '/instructors', to: 'others#instructors'
     get '/subjects', to: 'others#subjects'
+    get '/search', to: 'others#search'
 
+    get '/searchCourse', to: 'users#searchCourse'
     # get  '/signin',  to: 'users#old'
     resources :users
+    resources :enrollments, only: [:create, :destroy]
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

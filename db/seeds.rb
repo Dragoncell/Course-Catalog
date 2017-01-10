@@ -15,6 +15,8 @@ JSON.parse(open("#{Rails.root}/db/course.json").read).each do |d|
     course.code = d['code']
     course.description = d['description']
     course.credits = d['credits'].to_i
+    course.subject = d['subjects'][0]['id']
+
     course.save
 end
 
